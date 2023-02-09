@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, "index"]);
 
-Route::get("/test", function () {
-    return view("test", [
-        "title" => "Laravel Training"
-    ]);
-});
+Route::get("/dashboard", [DashboardController::class, "index"]);
