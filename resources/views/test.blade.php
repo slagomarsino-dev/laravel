@@ -380,6 +380,11 @@
                 --tw-text-opacity: 1;
                 color: rgb(107 114 128 / var(--tw-text-opacity))
             }
+
+            .text-white {
+                --tw-text-opacity: 1;
+                color: rgb(255 255 255 / var(--tw-text-opacity))
+            }
         }
     </style>
 
@@ -418,7 +423,14 @@
                     </g>
                 </svg>
             </div>
+
+            @isset($title)
+                <div class="text-white">
+                    {{ $title }}
+                </div>
+            @endisset
         </div>
+
     </div>
 </body>
 
